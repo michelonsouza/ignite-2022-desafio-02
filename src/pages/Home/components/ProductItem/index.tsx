@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 
-import { Plus, Minus, ShoppingCart } from 'phosphor-react';
+import { ShoppingCart } from 'phosphor-react';
 
 import { Product } from '@/models';
 
@@ -36,14 +36,6 @@ export function ProductItem({
     return [currency.replaceAll(/\s/gi, '_'), value];
   }, [product.price]);
 
-  const handleSubQuantity = useCallback(() => {
-    setQuantity(oldState => oldState - 1);
-  }, []);
-
-  const handleAddQuantity = useCallback(() => {
-    setQuantity(oldState => oldState + 1);
-  }, []);
-
   const handleAddToCart = useCallback(() => {
     const formattedProduct: Product = { ...product, quantity };
     onAddToCart(formattedProduct);
@@ -70,19 +62,10 @@ export function ProductItem({
           ))}
         </PriceContainer>
         <QuantityContainer>
-          <QuantityInputContainer>
-            <input name="quantity" type="number" readOnly value={quantity} />
-            <button
-              type="button"
-              disabled={quantity === 1}
-              onClick={handleSubQuantity}
-            >
-              <Minus size={16} />
-            </button>
-            <button type="button" onClick={handleAddQuantity}>
-              <Plus size={16} />
-            </button>
-          </QuantityInputContainer>
+          <QuantityInputContainer
+            value={quantity}
+            onChangeQuantity={setQuantity}
+          />
           <AddCartButton type="button" onClick={handleAddToCart}>
             <ShoppingCart size={22} weight="fill" />
           </AddCartButton>
