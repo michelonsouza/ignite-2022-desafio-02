@@ -1,5 +1,6 @@
 import { MapPin, ShoppingCart } from 'phosphor-react';
 
+// import coffeeDeliveryDarkLogo from '@/assets/icons/logo-dark.svg';
 import coffeeDeliveryLogo from '@/assets/icons/logo.svg';
 
 import {

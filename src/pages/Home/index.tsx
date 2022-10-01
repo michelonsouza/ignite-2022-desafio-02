@@ -1,5 +1,7 @@
+import { Banner } from '@/components';
+
 export function Home(): JSX.Element {
-  return <h1>Home</h1>;
+  return <Banner />;
 }
 
 Home.dysplayName = 'Home';
