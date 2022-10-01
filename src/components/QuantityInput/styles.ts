@@ -44,7 +44,7 @@ export const QuantityInputContainer = styled.div`
       box-shadow 150ms ease;
     color: ${({ theme }) => theme.purple.main};
 
-    &:hover {
+    &:hover:not(:disabled) {
       background-color: ${({ theme }) => theme.purple.main};
       color: ${({ theme }) => theme.white};
       box-shadow: 0 0 0 2px ${({ theme }) => theme.purple.main};
@@ -65,6 +65,7 @@ export const QuantityInputContainer = styled.div`
 
     &:disabled {
       opacity: 0.8;
+      cursor: not-allowed;
     }
   }
 `;
