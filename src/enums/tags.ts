@@ -1,0 +1,7 @@
+export enum TagsEnum {
+  TRADITIONAL = 'TRADICIONAL',
+  ICE_COLD = 'GELADO',
+  WITH_MILK = 'COM LEITE',
+  SPECIAL = 'ESPECIAL',
+  ALCOHOLIC = 'ALCÓLICO',
+}
