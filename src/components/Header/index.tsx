@@ -2,6 +2,7 @@ import { MapPin, ShoppingCart } from 'phosphor-react';
 
 // import coffeeDeliveryDarkLogo from '@/assets/icons/logo-dark.svg';
 import coffeeDeliveryLogo from '@/assets/icons/logo.svg';
+import { useCartContext } from '@/hooks';
 
 import {
   HeaderContainer,
@@ -13,6 +14,8 @@ import {
 } from './styles';
 
 export function Header(): JSX.Element {
+  const { totalItemsQuantity } = useCartContext();
+
   return (
     <HeaderContainer>
       <LogoContainer
@@ -26,7 +29,7 @@ export function Header(): JSX.Element {
         </LocationContainer>
         <CartLink to="/cart">
           <ShoppingCart size={22} weight="fill" />
-          <Badge>3</Badge>
+          {!!totalItemsQuantity && <Badge>{totalItemsQuantity}</Badge>}
         </CartLink>
       </ActionsContainer>
     </HeaderContainer>

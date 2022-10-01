@@ -1,4 +1,5 @@
 import { Banner } from '@/components';
+import { useCartContext } from '@/hooks';
 import { coffeesMock } from '@/mocks';
 
 import { ProductItem } from './components';
@@ -10,6 +11,8 @@ import {
 } from './styles';
 
 export function Home(): JSX.Element {
+  const { addNewProductToCartState } = useCartContext();
+
   return (
     <RootContainer>
       <Banner />
@@ -20,7 +23,7 @@ export function Home(): JSX.Element {
             <ProductItem
               product={product}
               key={product.id}
-              onAddToCart={console.info}
+              onAddToCart={addNewProductToCartState}
             />
           ))}
         </ProductList>
