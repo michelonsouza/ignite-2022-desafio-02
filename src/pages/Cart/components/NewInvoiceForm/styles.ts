@@ -8,16 +8,26 @@ export const RootContainer = styled.div`
 `;
 
 export const SingleInputContainer = styled.div`
-  min-width: 12.5rem;
-  width: 12.5rem;
-  max-width: 100%;
+  width: 100%;
+
+  @media (min-width: 768px) {
+    min-width: 12.5rem;
+    width: 12.5rem;
+    max-width: 100%;
+  }
 `;
 
 export const RowContainer = styled.div`
   display: flex;
   align-items: flex-start;
   width: 100%;
-  gap: 0.75rem;
+  gap: 1rem;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    gap: 0.75rem;
+    flex-direction: row;
+  }
 `;
 
 export const StateContainer = styled.div`

@@ -12,7 +12,7 @@ import { newAddressValidationSchema } from './components/NewInvoiceForm/validato
  * @description Business Logic Component (BLOC) Cart
  */
 export function useBloc() {
-  const { address } = useCartContext();
+  const { address, updateAddressState } = useCartContext();
   const newInvoiceForm = useForm<Address>({
     defaultValues: address,
     resolver: zodResolver(newAddressValidationSchema),
@@ -21,10 +21,12 @@ export function useBloc() {
 
   const { handleSubmit, formState } = newInvoiceForm;
 
-  const submitForm = useCallback((data: Address) => {
-    // eslint-disable-next-line no-console
-    console.log({ data });
-  }, []);
+  const submitForm = useCallback(
+    (data: Address) => {
+      updateAddressState(data);
+    },
+    [updateAddressState],
+  );
 
   return {
     formState,

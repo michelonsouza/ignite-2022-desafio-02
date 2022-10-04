@@ -10,7 +10,7 @@ export const QuantityInputContainer = styled.div`
   min-height: 2rem;
 
   &:focus-within {
-    box-shadow: 0 0 0 2px ${({ theme }) => theme.purple.main};
+    box-shadow: none;
   }
 
   & > input {

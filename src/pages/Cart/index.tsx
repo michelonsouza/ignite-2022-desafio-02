@@ -3,7 +3,12 @@ import { FormProvider } from 'react-hook-form';
 import { useTheme } from 'styled-components';
 
 import { useBloc } from './bloc';
-import { Describe, CartResume, NewInvoiceForm } from './components';
+import {
+  Describe,
+  CartResume,
+  NewInvoiceForm,
+  PaymentMode,
+} from './components';
 import {
   RootContainer,
   AddressContainer,
@@ -41,6 +46,7 @@ export function Cart(): JSX.Element {
             title="Pagamento"
             subtitle="O pagamento é feito na entrega. Escolha a forma que deseja pagar"
           />
+          <PaymentMode />
         </Card>
       </AddressContainer>
       <ProductsContainer>

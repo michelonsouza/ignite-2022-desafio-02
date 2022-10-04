@@ -4,7 +4,7 @@ import { Container } from '@/components';
 
 export const RootContainer = styled(Container)`
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column;
   padding-top: 1.5rem;
   margin: 0 auto;
   gap: 1rem;
