@@ -14,16 +14,7 @@ import { ZipCodeInputProps } from './types';
 
 export const ZipCodeInput = forwardRef<HTMLInputElement, ZipCodeInputProps>(
   (
-    {
-      error,
-      helperText,
-      required,
-      onChange,
-      name,
-      onGetAddress,
-      value,
-      ...props
-    },
+    { error, helperText, required, onChange, name, onGetAddress, ...props },
     ref,
   ): JSX.Element => {
     const [internValue, setInternValue] = useState<string>('');

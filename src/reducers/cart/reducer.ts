@@ -29,7 +29,7 @@ export function cartReducer(
 
             return {
               ...stateProduct,
-              quantity: stateProduct.quantity + productExists.quantity,
+              quantity: stateProduct.quantity + product.quantity,
             };
           });
         } else {

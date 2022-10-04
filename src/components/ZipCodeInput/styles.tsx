@@ -81,6 +81,11 @@ const StyledInput = styled.input`
   }
 `;
 
-export const MaskedStyledInput = IMaskMixin(({ inputRef, ...props }) => (
-  <StyledInput {...(props as any)} ref={inputRef as unknown as any} />
+export const MaskedStyledInput = IMaskMixin<
+  any,
+  false,
+  string,
+  HTMLInputElement
+>(({ inputRef, ...props }) => (
+  <StyledInput {...(props as any)} ref={inputRef} />
 ));

@@ -42,13 +42,18 @@ export function UserSharedPreferencesProvider({
     return 'light';
   });
 
+  const updateTheme = useCallback((newTheme: ThemeType) => {
+    encryptStorage.setItem(UserStorageKeys.THEME, newTheme);
+    setTheme(newTheme);
+  }, []);
+
   const memoValue: UserSharedPreferencesData = useMemo(() => {
     return {
       region,
       theme,
-      updateTheme: setTheme,
+      updateTheme,
     };
-  }, [region, theme]);
+  }, [region, theme, updateTheme]);
 
   const successGetGeoLocation = useCallback(
     async (geolocation: GeolocationPosition) => {

@@ -6,6 +6,7 @@ export const RootContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   padding-top: 1.5rem;
+  padding-bottom: 3rem;
   margin: 0 auto;
   gap: 1rem;
 
