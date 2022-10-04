@@ -1,4 +1,5 @@
 export const defaultTheme = {
+  mode: 'light',
   background: '#FAFAFA',
   white: '#FFFFFF',
   yellow: {

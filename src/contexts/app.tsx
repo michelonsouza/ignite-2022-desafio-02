@@ -3,6 +3,7 @@ import { useMemo } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
 
+import { ThemeSwitch } from '@/components';
 import { CartContextProvider } from '@/contexts';
 import { useUserSharedPreferencesContext } from '@/hooks';
 import { Router } from '@/router';
@@ -19,6 +20,7 @@ export function AppContext(): JSX.Element {
   return (
     <ThemeProvider theme={memoTheme}>
       <GlobalStyle />
+      <ThemeSwitch />
       <BrowserRouter>
         <CartContextProvider>
           <Router />

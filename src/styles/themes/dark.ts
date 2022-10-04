@@ -1,4 +1,5 @@
 export const darkTheme = {
+  mode: 'dark',
   background: '#170d2d',
   white: '#FFFFFF',
   yellow: {
@@ -11,6 +12,11 @@ export const darkTheme = {
     dark: '#4B2995',
     light: '#302b3c',
   },
+  red: {
+    main: '#dc3545',
+    dark: '#8e1722',
+    light: '#e36e79',
+  },
   typography: {
     title: '#ffffff',
     subtitle: '#f2f2f2',
@@ -18,9 +24,9 @@ export const darkTheme = {
     label: '#aaa',
   },
   common: {
-    hover: '#D7D5D5',
-    button: '#E6E5E5',
-    input: '#EEEDED',
+    hover: '#311b67',
+    button: '#2d195d',
+    input: '#26164b',
     card: '#1c1037',
   },
 };

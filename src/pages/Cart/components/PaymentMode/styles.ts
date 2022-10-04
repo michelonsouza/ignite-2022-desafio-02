@@ -43,7 +43,8 @@ export const PaymentModeContainer = styled.button`
 
   &[data-active] {
     cursor: initial;
-    background-color: ${({ theme }) => theme.purple.light};
+    background-color: ${({ theme }) =>
+      theme.mode === 'light' ? theme.purple.light : theme.common.hover};
     border: 1px solid ${({ theme }) => theme.purple.main};
   }
 `;

@@ -42,7 +42,8 @@ export const LocationContainer = styled.button`
   padding: 0 0.5rem;
   background-color: ${({ theme }) => theme.purple.light};
   font-size: 0.875rem;
-  color: ${({ theme }) => theme.purple.dark};
+  color: ${({ theme }) =>
+    theme.mode === 'light' ? theme.purple.dark : theme.white};
 
   & > svg {
     color: ${({ theme }) => theme.purple.main};
