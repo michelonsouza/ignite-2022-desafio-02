@@ -28,6 +28,7 @@ import { CartResumeProps } from './types';
 
 export function CartResume({
   onFinishInvoice: _,
+  disableFinishinvoice,
 }: CartResumeProps): JSX.Element {
   const {
     products,
@@ -116,7 +117,10 @@ export function CartResume({
           </span>
         </NoItems>
       )}
-      <ConfirmFinishInvoiceButton type="button" disabled={!products.length}>
+      <ConfirmFinishInvoiceButton
+        type="button"
+        disabled={disableFinishinvoice || !products.length}
+      >
         Confirmar Pedido
       </ConfirmFinishInvoiceButton>
     </RootContainer>

@@ -14,6 +14,7 @@ export const HeaderContainer = styled(Container)`
 export const LogoContainer = styled.img`
   width: auto;
   height: 2.5rem;
+  cursor: pointer;
 `;
 
 export const ActionsContainer = styled.nav`

@@ -8,6 +8,7 @@ export interface CartContextData {
   totalItemsAmount: number;
   totalItemsQuantity: number;
   address: Address;
+  resetDefaultState(): void;
   updateAddressState(address: Address): void;
   updateItemQuantityState(product: Product): void;
   addNewProductToCartState(product: Product): void;

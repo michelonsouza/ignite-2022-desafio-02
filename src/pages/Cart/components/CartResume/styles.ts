@@ -72,6 +72,11 @@ export const RemoveButton = styled.button`
   gap: 0.24rem;
   color: ${({ theme }) => theme.typography.text};
   background-color: ${({ theme }) => theme.common.button};
+  transition: opacity 150ms ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
 
   & > svg {
     color: ${({ theme }) => theme.purple.main};

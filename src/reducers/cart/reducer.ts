@@ -85,6 +85,11 @@ export function cartReducer(
         draft.paymentType = paymentType;
       });
 
+    case CartActionTypes.RESET_DEFAULT_VALUES: {
+      const defaultState = action.payload as CartContextState;
+      return defaultState;
+    }
+
     default:
       return state;
   }

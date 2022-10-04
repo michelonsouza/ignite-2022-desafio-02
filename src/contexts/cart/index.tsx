@@ -15,6 +15,7 @@ import {
   removeProductFromCart,
   updateAddress,
   updatePaymentType,
+  resetDefaultValues,
 } from '@/reducers';
 
 import { getCartInitialState } from './helpers';
@@ -67,6 +68,10 @@ export function CartContextProvider({
     dispatch(updatePaymentType(paymentType));
   }, []);
 
+  const resetDefaultState = useCallback(() => {
+    dispatch(resetDefaultValues());
+  }, []);
+
   const memoValue: CartContextData = useMemo(() => {
     return {
       address: state.address,
@@ -75,6 +80,7 @@ export function CartContextProvider({
       deliveryPrice: state.deliveryPrice,
       totalItemsAmount: memoTotalItemsAmount,
       totalItemsQuantity: memoTotalItemsQuantity,
+      resetDefaultState,
       updateAddressState,
       updatePaymentTypeState,
       updateItemQuantityState,
@@ -85,6 +91,7 @@ export function CartContextProvider({
     state.address,
     state.products,
     memoTotalAmount,
+    resetDefaultState,
     updateAddressState,
     state.deliveryPrice,
     memoTotalItemsAmount,
