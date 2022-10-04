@@ -15,6 +15,7 @@ export interface CartContextData {
   addNewProductToCartState(product: Product): void;
   removeProductFromCartState(product: Product): void;
   updatePaymentTypeState(paymentType: PaymentType): void;
+  clearProducts(): void;
 }
 
 export interface CartContextState {

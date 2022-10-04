@@ -21,7 +21,7 @@ import {
 export function Header(): JSX.Element {
   const location = useLocation();
   const navigate = useNavigate();
-  const { totalItemsQuantity } = useCartContext();
+  const { totalItemsQuantity, resetDefaultState } = useCartContext();
   const { region, theme } = useUserSharedPreferencesContext();
 
   const memoLogo = useMemo(() => {
@@ -30,9 +30,13 @@ export function Header(): JSX.Element {
 
   const handleGoHome = useCallback(() => {
     if (location.pathname !== '/') {
+      if (location.pathname === '/invoice') {
+        resetDefaultState();
+      }
+
       navigate('/');
     }
-  }, [location, navigate]);
+  }, [location.pathname, navigate, resetDefaultState]);
 
   return (
     <RootContainer>

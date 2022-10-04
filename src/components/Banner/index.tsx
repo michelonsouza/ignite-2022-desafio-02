@@ -3,7 +3,8 @@ import { useMemo } from 'react';
 import { ShoppingCart, Package, Timer, Coffee } from 'phosphor-react';
 import { useTheme } from 'styled-components';
 
-import { IconWithLabel } from './components';
+import { IconWithLabel } from '@/components';
+
 import {
   HeroContainer,
   InfoContainer,

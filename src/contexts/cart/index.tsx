@@ -16,6 +16,7 @@ import {
   updateAddress,
   updatePaymentType,
   resetDefaultValues,
+  clearCart,
 } from '@/reducers';
 
 import { getCartInitialState } from './helpers';
@@ -53,6 +54,10 @@ export function CartContextProvider({
     dispatch(addProductToCart(product));
   }, []);
 
+  const clearProducts = useCallback(() => {
+    dispatch(clearCart());
+  }, []);
+
   const removeProductFromCartState = useCallback((product: Product) => {
     dispatch(removeProductFromCart(product));
   }, []);
@@ -82,6 +87,7 @@ export function CartContextProvider({
       totalItemsAmount: memoTotalItemsAmount,
       totalItemsQuantity: memoTotalItemsQuantity,
       paymentType: state.paymentType,
+      clearProducts,
       resetDefaultState,
       updateAddressState,
       updatePaymentTypeState,
@@ -97,6 +103,7 @@ export function CartContextProvider({
     memoTotalAmount,
     memoTotalItemsAmount,
     memoTotalItemsQuantity,
+    clearProducts,
     resetDefaultState,
     updateAddressState,
     updatePaymentTypeState,

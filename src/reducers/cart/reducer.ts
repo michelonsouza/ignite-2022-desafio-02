@@ -40,6 +40,12 @@ export function cartReducer(
         draft.products = products;
       });
 
+    case CartActionTypes.CLEAR_CART:
+      return produce(state, draft => {
+        encryptStorage.setItem(StorageKeys.CART_PRODUCTS, []);
+        draft.products = [];
+      });
+
     case CartActionTypes.REMOVE_FROM_CART:
       return produce(state, draft => {
         const product = action.payload as Product;
@@ -73,7 +79,7 @@ export function cartReducer(
       return produce(state, draft => {
         const address = action.payload as Address;
 
-        encryptStorage.setItem(StorageKeys.CART_PRODUCTS, address);
+        encryptStorage.setItem(StorageKeys.CART_ADDRESS, address);
         draft.address = address;
       });
 

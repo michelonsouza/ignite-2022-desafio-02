@@ -58,6 +58,13 @@ export function updatePaymentType(
   };
 }
 
+export function clearCart(): CartAction {
+  return {
+    type: CartActionTypes.CLEAR_CART,
+    payload: {},
+  };
+}
+
 export function resetDefaultValues(): CartAction<CartContextState> {
   return {
     type: CartActionTypes.RESET_DEFAULT_VALUES,

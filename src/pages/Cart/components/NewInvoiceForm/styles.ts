@@ -31,11 +31,15 @@ export const RowContainer = styled.div`
 `;
 
 export const StateContainer = styled.div`
-  max-width: 100%;
-  min-width: 3.75rem;
-  width: 3.75rem;
+  max-width: 8rem;
 
   & input {
     text-transform: uppercase;
+  }
+
+  @media (min-width: 768px) {
+    min-width: 3.75rem;
+    width: 3.75rem;
+    max-width: 100%;
   }
 `;
