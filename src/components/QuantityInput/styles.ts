@@ -9,10 +9,15 @@ export const QuantityInputContainer = styled.div`
   border-radius: 6px;
   min-height: 2rem;
 
+  &:focus-within {
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.purple.main};
+  }
+
   & > input {
     border: 0;
     width: 100%;
     height: 100%;
+    min-height: 2rem;
     background-color: transparent;
     text-align: center;
     color: ${({ theme }) => theme.typography.title};

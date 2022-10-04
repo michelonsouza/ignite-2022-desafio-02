@@ -3,6 +3,14 @@ import styled from 'styled-components';
 
 import { Container } from '@/components';
 
+export const RootContainer = styled.header`
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background-color: ${({ theme }) => theme.background};
+`;
+
 export const HeaderContainer = styled(Container)`
   display: flex;
   align-items: center;

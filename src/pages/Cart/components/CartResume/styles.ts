@@ -72,10 +72,10 @@ export const RemoveButton = styled.button`
   gap: 0.24rem;
   color: ${({ theme }) => theme.typography.text};
   background-color: ${({ theme }) => theme.common.button};
-  transition: opacity 150ms ease;
+  transition: background-color 150ms ease;
 
   &:hover {
-    opacity: 0.8;
+    background-color: ${({ theme }) => theme.common.hover};
   }
 
   & > svg {
@@ -161,11 +161,11 @@ export const ConfirmFinishInvoiceButton = styled.button`
   text-align: center;
   color: ${({ theme }) => theme.white};
   background-color: ${({ theme }) => theme.yellow.main};
-  transition: opacity 150ms ease;
+  transition: opacity 150ms ease, background-color 150ms ease;
   text-transform: uppercase;
 
   &:hover:not(:disabled) {
-    opacity: 0.8;
+    background-color: ${({ theme }) => theme.yellow.dark};
   }
 
   :disabled {

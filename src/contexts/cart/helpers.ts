@@ -2,6 +2,7 @@ import { StorageKeys, PaymentType } from '@/enums';
 import { Product, Address } from '@/models';
 import { encryptStorage } from '@/utils';
 
+import { defaultValues } from './data';
 import { CartContextState } from './types';
 
 export function getCartInitialState(): CartContextState {
@@ -15,15 +16,8 @@ export function getCartInitialState(): CartContextState {
   const products =
     encryptStorage.getItem<Product[]>(StorageKeys.CART_PRODUCTS) || [];
 
-  const address = encryptStorage.getItem<Address>(StorageKeys.CART_ADDRESS) || {
-    city: '',
-    neighborhood: '',
-    state: '',
-    street: '',
-    zipCode: '',
-    complement: '',
-    number: '',
-  };
+  const address =
+    encryptStorage.getItem<Address>(StorageKeys.CART_ADDRESS) || defaultValues;
 
   return {
     address,

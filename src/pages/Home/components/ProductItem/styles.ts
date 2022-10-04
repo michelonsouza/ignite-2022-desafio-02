@@ -148,11 +148,15 @@ export const AddCartButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 150ms ease;
+  transition: box-shadow 150ms ease, background-color 150ms ease;
   color: ${({ theme }) => theme.white};
   background-color: ${({ theme }) => theme.purple.dark};
 
   &:hover {
-    opacity: 0.8;
+    background-color: ${({ theme }) => theme.purple.main};
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px ${({ theme }) => theme.purple.dark};
   }
 `;

@@ -118,7 +118,8 @@ export function CartResume({
         </NoItems>
       )}
       <ConfirmFinishInvoiceButton
-        type="button"
+        type="submit"
+        form="new-invoice-form"
         disabled={disableFinishinvoice || !products.length}
       >
         Confirmar Pedido

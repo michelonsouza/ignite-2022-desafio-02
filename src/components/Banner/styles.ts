@@ -100,7 +100,7 @@ export const HeroImageContainer = styled.div`
 export const SubInfosContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
-  grid-gap: 1.25rem;
+  grid-gap: 0.5rem;
   position: relative;
 
   @media (min-width: 768px) {

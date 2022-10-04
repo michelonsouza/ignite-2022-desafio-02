@@ -1,7 +1,9 @@
 import { MapPinLine, CurrencyDollar } from 'phosphor-react';
+import { FormProvider } from 'react-hook-form';
 import { useTheme } from 'styled-components';
 
-import { Describe, CartResume } from './components';
+import { useBloc } from './bloc';
+import { Describe, CartResume, NewInvoiceForm } from './components';
 import {
   RootContainer,
   AddressContainer,
@@ -13,6 +15,7 @@ import {
 
 export function Cart(): JSX.Element {
   const theme = useTheme();
+  const { handleSubmit, submitForm, newInvoiceForm, formState } = useBloc();
 
   return (
     <RootContainer>
@@ -25,6 +28,11 @@ export function Cart(): JSX.Element {
             title="Endereço de Entrega"
             subtitle="Informe o endereço onde deseja receber seu pedido"
           />
+          <form id="new-invoice-form" onSubmit={handleSubmit(submitForm)}>
+            <FormProvider {...newInvoiceForm}>
+              <NewInvoiceForm />
+            </FormProvider>
+          </form>
         </Card>
         <Card>
           <Describe
@@ -38,7 +46,10 @@ export function Cart(): JSX.Element {
       <ProductsContainer>
         <SectionTitle>Cafés selecionados</SectionTitle>
         <ItemsCard>
-          <CartResume onFinishInvoice={console.info} />
+          <CartResume
+            disableFinishinvoice={!formState.isValid}
+            onFinishInvoice={console.info}
+          />
         </ItemsCard>
       </ProductsContainer>
     </RootContainer>

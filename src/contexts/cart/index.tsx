@@ -21,6 +21,7 @@ import {
 import { getCartInitialState } from './helpers';
 import { CartContextData } from './types';
 
+export * from './data';
 export * from './types';
 
 export const CartContext = createContext<CartContextData>(

@@ -11,6 +11,11 @@ export const defaultTheme = {
     dark: '#4B2995',
     light: '#EBE5F9',
   },
+  red: {
+    main: '#dc3545',
+    dark: '#8e1722',
+    light: '#e36e79',
+  },
   typography: {
     title: '#272221',
     subtitle: '#403937',

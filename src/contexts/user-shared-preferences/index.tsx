@@ -28,7 +28,19 @@ export function UserSharedPreferencesProvider({
 
     return storagedRegion || '--';
   });
-  const [theme, setTheme] = useState<ThemeType>('light');
+  const [theme, setTheme] = useState<ThemeType>(() => {
+    const storagedTheme = encryptStorage.getItem<ThemeType>(
+      UserStorageKeys.THEME,
+    );
+
+    if (storagedTheme) {
+      return storagedTheme;
+    }
+
+    encryptStorage.setItem(UserStorageKeys.THEME, 'light');
+
+    return 'light';
+  });
 
   const memoValue: UserSharedPreferencesData = useMemo(() => {
     return {
@@ -69,7 +81,6 @@ export function UserSharedPreferencesProvider({
       // eslint-disable-next-line no-console
       console.error('Geolocation is not supported by your browser');
     } else {
-      console.log('porque?');
       window.navigator.geolocation.getCurrentPosition(
         successGetGeoLocation,
         errorGetGeolocation,
